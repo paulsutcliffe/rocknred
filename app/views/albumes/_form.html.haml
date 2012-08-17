@@ -1,0 +1,15 @@
+= form_for(@album) do |f|
+
+  - if @album.errors.any?
+    #errorExplanation
+      %h2= I18n.t('activerecord.errors.messages.album.invalid_record')
+      %ul
+      - @album.errors.full_messages.each do |msg|
+        %li= msg
+  .field
+    = f.label :nombre
+    %br
+    = f.text_field :nombre
+
+  .actions
+    = f.submit I18n.t('submit')

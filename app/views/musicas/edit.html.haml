@@ -1,0 +1,7 @@
+%h2.title
+  = page_title! t('musica.edit')
+
+#content
+  = render 'form'
+  = link_to t('show'), @musica, :class => 'button show'
+  = link_to t('back'), musicas_path, :class => 'button back'

@@ -1,0 +1,16 @@
+%h2.title
+  = page_title! t('musica.index')
+
+#content
+  = link_to "Nueva Música", new_musica_path
+  .table-head
+    =t('activerecord.attributes.musica.soundcloud')
+
+    - for musica in @musicas
+      .block{ :class => cycle(:odd, :even) }
+        = musica.soundcloud
+          - if current_admin
+        .admin-controls
+          = link_to t('show'), musica, :class => 'button show'
+          = link_to t('edit'), edit_musica_path(musica), :class => 'button edit'
+          = link_to t('destroy'), musica, :confirm => I18n.t('confirm_delete'), :class => 'button delete', :method => :delete

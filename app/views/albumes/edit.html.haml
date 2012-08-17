@@ -1,0 +1,7 @@
+%h2.title
+  = page_title! I18n.t('album.edit')
+
+#content
+  = render 'form'
+  = link_to I18n.t('show'), @album, :class => 'button show'
+  = link_to I18n.t('back'), albumes_path, :class => 'button back'

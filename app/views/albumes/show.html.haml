@@ -1,0 +1,11 @@
+%h2.title
+  = page_title! I18n.t('album.title')
+
+#content
+  %p
+    %b= I18n.t('activerecord.attributes.album.nombre')
+    = @album.nombre
+
+  - if current_admin
+    = link_to I18n.t('edit'), edit_album_path(@album)
+  = link_to I18n.t('back'), albumes_path

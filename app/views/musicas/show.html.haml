@@ -1,0 +1,11 @@
+%h2.title
+  = page_title! "musica"
+
+#content
+  %p
+    %b t('activerecord.attributes.musica.soundcloud')
+    = @musica.soundcloud
+
+  - if current_admin
+    = link_to t('edit'), edit_musica_path(@musica)
+  = link_to t('back'), musicas_path
